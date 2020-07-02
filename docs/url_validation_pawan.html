@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url validator</title>
+    <script>
+        function url_validator(web_url) {
+            if (web_url.match(/^(http|https|ftp):\/\/[a-zA-z0-9\-.]+\.[a-zA-z0-9]{2,3}$/) === null) {
+                document.getElementById('result').innerText = 'invalid url';
+            } else {
+                document.getElementById('result').innerText = 'valid url';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" name="web-url" id="web-url" onchange="url_validator(this.value)">
+        <div id="result"></div>
+    </form>
+</body>
+
+</html>
